@@ -27,8 +27,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         
         if let buttonTitle = (sender as AnyObject).title(for: .normal) {
             
-            if (inputLabel.text?.count)! < 5 {
-            
+            if (inputLabel.text?.count)! < 9 {
                 if inputLabel.text == "0" {
                     
                     if buttonTitle == "."{
@@ -48,7 +47,6 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                     }
                 }
             }
-            
         }
         
     }
@@ -81,6 +79,13 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         bottomCurrencySelector.inputView = secondPicker
         thePicker.delegate = self
         secondPicker.delegate = self
+        inputLabel.adjustsFontSizeToFitWidth = true
+        inputLabel.numberOfLines = 1
+        inputLabel.minimumScaleFactor = 0.5
+        outputLabel.adjustsFontSizeToFitWidth = true
+        outputLabel.numberOfLines = 1
+        outputLabel.minimumScaleFactor = 0.5
+        
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
