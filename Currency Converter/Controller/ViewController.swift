@@ -90,7 +90,12 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     func updateOutputlabel() {
         let num = Double(inputLabel.text!)! * currencyModel.getMultiplyer(from: topCurrencySelector.text!, to: bottomCurrencySelector.text!)
         let num2 = Double(round(num*100)/100)
-        outputLabel.text = String(num2)
+        
+        if floor(num2) == num2 {
+            outputLabel.text = String(Int(num2))
+        }else {
+            outputLabel.text = String(num2)
+        }
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
